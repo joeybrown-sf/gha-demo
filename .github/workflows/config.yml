@@ -20,7 +20,7 @@ jobs:
         echo "We're going to be creating something here that should be torn down after the tests run."
 
     - name: Run tests
-      run: bundle exec rake
+      run: bundle exec rspec
 
     - name: Destroy stateful dependencies
       run: |
