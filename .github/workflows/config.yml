@@ -23,5 +23,6 @@ jobs:
       run: bundle exec rspec
 
     - name: Destroy stateful dependencies
+      if: always()
       run: |
         echo "Cool! We successfully tore down the dependency".
