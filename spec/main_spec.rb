@@ -1,14 +1,19 @@
 RSpec.describe "test" do
 
   it "doesn't blow up" do
-    x = 10
-    sleep_duration_seconds = 5
+    iter = 10
+    sleep_dur_sec = 6
 
-    while x >= 1
-      x = x - 1
-      puts "Going to sleep for #{sleep_duration_seconds} seconds..."
-      sleep(sleep_duration_seconds)
+    while iter >= 1
+      iter = iter - 1
+      puts "sleeping for #{sleep_dur_sec} seconds..."
+      sleep(sleep_dur_sec)
     end
+
+  end
+
+  it "is good at math" do
+    expect(1).to eq(1)
   end
 
 end
