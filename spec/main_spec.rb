@@ -13,7 +13,7 @@ RSpec.describe "test" do
   end
 
   it "is good at math" do
-    expect(1).to eq(1)
+    expect(1).to eq(2)
   end
 
 end
