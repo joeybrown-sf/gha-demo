@@ -1,0 +1,27 @@
+name: Demonstration of Long Runner
+
+on: push
+
+jobs:
+  ftest:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up ruby
+      uses: ruby/setup-ruby@0a29871fe2b0200a17a4497bae54fe5df0d973aa
+      with:
+        ruby-version: 2.7
+        bundler-cache: true
+
+    - name: Create stateful dependencies
+      run: |
+        echo "We're going to be creating something here that should be torn down after the tests run."
+
+    - name: Run tests
+      run: bundle exec rake
+
+    - name: Destroy stateful dependencies
+      run: |
+        echo "Cool! We successfully tore down the dependency".
